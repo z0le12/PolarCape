@@ -5,14 +5,18 @@ body {
 
 .main-container .heading {
     display: flex;
+    justify-content: center;
     padding: 3em 0;
-    width: 300px;
 }
 
 .main-container .greeting {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.main-container .heading img {
+    width: 70%;
 }
 
 .main-container .heading span {
@@ -51,7 +55,7 @@ body {
     margin: 0 0 0 3%;
 }
 
-.main-container .instruction .input-form {
+.main-container .instruction #input-form {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -60,18 +64,32 @@ body {
     width: 25%;
 }
 
-.main-container .instruction .input-form .form {
+.main-container .instruction #input-form .form {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.main-container .instruction .input-form .form input {
-    height: 30px;
-    border-radius: 1em;
+.main-container .instruction #input-form .p-tag-error {
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: tomato;
 }
 
-.main-container .instruction .input-form .form button {
+.main-container .instruction #input-form .form input {
+    height: 30px;
+    position: relative;
+}
+
+.main-container .instruction #input-form .form span {
+    display: none;
+    color: tomato;
+    position: absolute;
+    font-size: xx-large;
+    right: 11%;
+}
+
+.main-container .instruction #input-form .form button {
     margin: 3% 0;
     width: 30%;
     background-color: chartreuse;
@@ -86,7 +104,6 @@ body {
 footer {
     display: flex;
     justify-content: center;
-    /* padding: 3% 0; */
     background: radial-gradient(darkblue, lightblue);
 }
 
