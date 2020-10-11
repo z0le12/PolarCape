@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PolarCape</title>
+    <link rel="stylesheet" type="text/css" href="./style/style.css">
+    <link rel="icon" type="image/jpg" href="./images/polar-cape-consulting.jpg">
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <div class='main-container'>
+
+        <div class="welcome-div">
+            <div class="greeting-text">
+                <h1 class="welcome-heading">Welcome</h1>
+                <h1 class="welcome-name"></h1>
+            </div>
+            <div class="greeting-image">
+                <img src="./images/baloon.png" alt="">
+            </div>
+        </div>
+
+        <div class="navigation-bar">
+            <nav class="navbar">
+                <p class="show-all-cards">Show all cards</p>
+                <ul class="types">Filter By Types</ul>
+                <ul class="colours">Filter By Colours</ul>
+                <p class="search-tag">Search:<input class="search-field" type="text" placeholder="name, text"></p>
+            </nav>
+        </div>
+
+        <div class="arrows-down">
+            <img src="./images/arrows-down.png" alt="">
+        </div>
+
+        <div id="cards"></div>
+
+    </div>
+
+    <footer>
+        <p>All rights reserved PolarCape&reg</p>
+    </footer>
+
+    <script type="module" src="./js/cards.js"></script>
+    <script type="module" src="./js/repository.js"></script>
+</body>
+</html>

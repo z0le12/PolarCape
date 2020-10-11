@@ -53,7 +53,8 @@ inputButton.addEventListener('click', () => {
         errors();
         createErrorInformation('Your name should strat with a capital letter');
     } else {
-        sessionStorage.setItem('Name', inputField.value);
+        sessionStorage.setItem('name', inputField.value);
+        location.href = "./cards.html";
     }
 });
 
