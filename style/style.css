@@ -238,6 +238,23 @@ body {
     align-items: center;
 }
 
+.main-container #cards .loading-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-container #cards .loading-div .loading-information {
+    color: teal;
+    font-size: x-large;
+    background: aquamarine;
+    margin-right: 3%;
+}
+
+.main-container #cards .loading-div img {
+    width: 20%;
+}
+
 .main-container #cards #table  {
     display: none;
     border-collapse: collapse;
@@ -250,7 +267,7 @@ body {
     width: 25%;
 }
 
-.main-container #cards .close-table-div{
+.main-container #cards .close-table-div {
     align-self: flex-end;
     margin: 1em 5em 0 0;
     background-color: tomato;

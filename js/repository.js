@@ -5,7 +5,6 @@ export class CardsRepo {
             try {
                 const response = await fetch('https://api.magicthegathering.io/v1/cards?random=true&pageSize=100&language=English');
                 const results = await response.json();
-                console.log(results.cards);
                 return results.cards;
             } catch (err) {
                 return console.error(err);

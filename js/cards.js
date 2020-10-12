@@ -34,6 +34,8 @@ window.onload = () => {
 const getAllCards = async() => {
     const allCards = await cardsRepo.getCards();
 
+    closeLoadingInformation();
+    
     allCards.forEach((e, i) => {
         const tableRow = document.createElement('tr');
 
@@ -100,6 +102,29 @@ types.addEventListener('click', () => {
 });
 
 showAllCards.addEventListener('click', () => {
+    loadingInformation();
+
     getAllCards();
     table.style.display = 'table-cell';
 });
+
+const loadingInformation = () => {
+    const loadingDiv = document.createElement('div');
+    loadingDiv.classList.add('loading-div');
+
+    const pTagInformation = document.createElement('p');
+    pTagInformation.classList.add('loading-information');
+    pTagInformation.innerText = "Fetching API data, please wait";
+    loadingDiv.appendChild(pTagInformation);
+
+    const loadingGif = document.createElement('img');
+    loadingGif.src = '../images/loading-gif.gif';
+    loadingDiv.appendChild(loadingGif);
+
+    cards.appendChild(loadingDiv);
+};
+
+const closeLoadingInformation = () => {
+    const loadingDiv = document.querySelector('.loading-div');
+    loadingDiv.remove();
+};
