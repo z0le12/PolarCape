@@ -9,6 +9,8 @@ const table = document.getElementById('table');
 const cards = document.getElementById('cards');
 const colours = document.querySelector('.colours');
 const coloursList = document.getElementById('colours');
+const coloursListItemsNodeList = document.querySelectorAll('.colours li');
+const coloursListItems = Array.from(coloursListItemsNodeList);
 const types = document.querySelector('.types');
 const typesList = document.getElementById('types');
 
@@ -128,3 +130,12 @@ const closeLoadingInformation = () => {
     const loadingDiv = document.querySelector('.loading-div');
     loadingDiv.remove();
 };
+
+coloursListItems.forEach((e, i) => {
+    e.onclick = async () => {
+        const clickedItem = e.innerText;
+        const allCards = await cardsRepo.getCards();
+        const cardsColours = allCards[i].colors;
+        console.log(cardsColours);
+    };
+});
