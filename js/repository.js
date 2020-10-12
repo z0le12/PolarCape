@@ -1,6 +1,3 @@
-const showAllCards = document.querySelector('.show-all-cards');
-const table = document.getElementById('table');
-
 export class CardsRepo {
     constructor() {
 
@@ -19,8 +16,7 @@ export class CardsRepo {
             try {
                 const response = await fetch('https://api.magicthegathering.io/v1/types');
                 const results = await response.json();
-                console.log(results.types);
-                return results;
+                return results.types;
             } catch (err) {
                 return console.error(err);
             }
@@ -28,32 +24,3 @@ export class CardsRepo {
 
     };
 };
-
-const cardsRepo = new CardsRepo;
-
-const getAllCards = async() => {
-    const allCards = await cardsRepo.getCards();
-
-
-    allCards.forEach((e, i) => {
-        const tableRow = document.createElement('tr');
-        const tableDataName = document.createElement('td');
-        const tableDataText = document.createElement('td');
-        const tableDataTypes = document.createElement('td');
-        const tableDataColors = document.createElement('td');
-        tableDataName.innerText = allCards[i].name;
-        tableDataText.innerText = allCards[i].text;
-        tableDataTypes.innerText = allCards[i].types;
-        tableDataColors.innerText = allCards[i].colors;
-        tableRow.appendChild(tableDataName, tableDataText, tableDataTypes, tableDataColors);
-        tableRow.appendChild(tableDataText);
-        tableRow.appendChild(tableDataTypes);
-        tableRow.appendChild(tableDataColors);
-        table.appendChild(tableRow);
-    });
-};
-
-showAllCards.addEventListener('click', () => {
-    getAllCards();
-    table.style.display = 'table-cell';
-});
