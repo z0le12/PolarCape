@@ -200,10 +200,28 @@ body {
 .main-container .arrows-down {
     display: flex;
     justify-content: center;
+    margin-bottom: 1%;
 }
 
 .main-container .arrows-down img {
     width: 15%;
+}
+
+.main-container #cards {
+    display: flex;
+    justify-content: center;
+}
+
+.main-container #cards #table  {
+    display: none;
+    border-collapse: collapse;
+    text-align: center;
+    width: 90%;
+}
+
+.main-container #cards #table th, td {
+    border: 1px solid darkturquoise;
+    width: 25%;
 }
 
 footer {
