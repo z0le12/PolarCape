@@ -26,3 +26,17 @@ export const closeLoadingInformation = () => {
     const loadingDiv = document.querySelector('.loading-div');
     loadingDiv.remove();
 };
+
+export const showHideFilterVisibility = () => {
+    const filterElementsHTMLCollection = document.getElementsByClassName('filter');
+    const filterElements = Array.from(filterElementsHTMLCollection);
+    
+    filterElements.forEach((e, i) => {
+        if(e.style.visibility === '') {
+            e.style.visibility = 'visible';
+            return;
+        } else {
+            e.style.visibility = 'hidden';
+        }
+    });
+};

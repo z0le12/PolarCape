@@ -162,6 +162,10 @@ body {
     align-items: center;
 }
 
+.main-container .navigation-bar .navbar .filter {
+    visibility: hidden;
+}
+
 .main-container .navigation-bar .navbar .show-all-cards {
     font-size: 18px;
     margin: 1em;
@@ -185,7 +189,6 @@ body {
 
 .main-container .navigation-bar .navbar .types,
 .main-container .navigation-bar .navbar .colours {
-    /* display: block; */
     width: 15%;
     height: 35%;
     background-color: #fff;

@@ -1,5 +1,6 @@
 import { CardsRepo } from './repository.js';
 import { closeLoadingInformation } from './toggle-information.js';
+import { showHideFilterVisibility } from './toggle-information.js';
 
 const cards = document.getElementById('cards');
 const table = document.getElementById('table');
@@ -11,6 +12,10 @@ export const getAllCards = async() => {
     const allCards = await cardsRepo.getCards();
 
     closeLoadingInformation();
+
+    if(!tableBody) {
+        tableBody = document.createElement('tbody');
+    };
     
     allCards.forEach((e, i) => {
         const tableRow = document.createElement('tr');
@@ -40,7 +45,9 @@ export const getAllCards = async() => {
         tableRow.appendChild(tableDataText);
         tableRow.appendChild(tableDataTypes);
         tableRow.appendChild(tableDataColors);
+
         tableBody.appendChild(tableRow);
+        table.appendChild(tableBody);
     });
 
     closeTableBTN();
@@ -58,12 +65,10 @@ const closeTableBTN = () => {
     cards.appendChild(closeTableDiv);
     
     closeTableBtn.addEventListener('click', () => {
-        const tableRows = document.getElementsByClassName('api-table-data');
-        const arrTableRows = Array.from(tableRows)
-
         table.style.display = 'none';
-        arrTableRows.map(e => e.remove());
+        tableBody.remove();
         closeTableDiv.remove();
+        showHideFilterVisibility();
     });
 };
 

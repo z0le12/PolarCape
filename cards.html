@@ -27,11 +27,11 @@
             <nav class="navbar">
                 <div class="show-all-cards">Show all cards</div>
 
-                <div class="types">Filter By Types
+                <div class="types filter">Filter By Types
                     <ul id="types"></ul>
                 </div>
 
-                <div class="colours">Filter By Colours
+                <div class="colours filter">Filter By Colours
                     <ul id="colours">
                         <li>White</li>
                         <li>Blue</li>
@@ -41,7 +41,7 @@
                     </ul>
                 </div>
 
-                <div class="search-tag">
+                <div class="search-tag filter">
                     <input class="search-field" type="text" placeholder="name, text">
                     <button id="search-btn">Search</button>
                 </div>
@@ -54,14 +54,15 @@
 
         <div id="cards">
             <table id='table'>
-                <tbody id='table-body'>
+                <thead id='table-head'>
                     <tr>
                         <th id="sort">Name</th>
                         <th>Text</th>
                         <th>Types</th>
                         <th>Colors</th>
                     </tr>
-                </tbody>
+                </thead>
+                <tbody id="table-body"></tbody>
             </table>
         </div>
 
