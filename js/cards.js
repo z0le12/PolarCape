@@ -4,11 +4,8 @@ import { loadingInformation, showHideFilterVisibility } from './toggle-informati
 import { colours } from './colours.js';
 import { searchFieldLogic } from './search.js';
 
-const welcomeName = document.getElementsByClassName('welcome-name')[0];
-const name = sessionStorage.getItem('name');
-welcomeName.innerText = name;
 
-const showAllCards = document.querySelector('.show-all-cards');
+document.getElementsByClassName('welcome-name')[0].innerText = sessionStorage.getItem('name');
 
 window.onload = () => {
     getAllTypes();
@@ -16,7 +13,7 @@ window.onload = () => {
     searchFieldLogic();
 };
 
-showAllCards.addEventListener('click', () => {
+document.querySelector('.show-all-cards').addEventListener('click', () => {
     loadingInformation();
     getAllCards();
     showHideFilterVisibility();

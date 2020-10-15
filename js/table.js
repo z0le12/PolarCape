@@ -4,18 +4,22 @@ import { showHideFilterVisibility } from './toggle-information.js';
 
 const cards = document.getElementById('cards');
 const table = document.getElementById('table');
-const tableBody = document.getElementById('table-body');
+let tableBody = null;
 
 const cardsRepo = new CardsRepo;
 
 export const getAllCards = async() => {
+    if(!tableBody) {
+        tableBody = document.createElement('tbody');
+        tableBody.id = 'table-body';
+    } else {
+        closeLoadingInformation();
+        return;
+    }
+
     const allCards = await cardsRepo.getCards();
 
     closeLoadingInformation();
-
-    if(!tableBody) {
-        tableBody = document.createElement('tbody');
-    };
     
     allCards.forEach((e, i) => {
         const tableRow = document.createElement('tr');
@@ -114,8 +118,7 @@ const sortTable = () => {
     };
 };
 
-const sortBtn = document.getElementById('sort');
-sortBtn.addEventListener('click', () => {
+const sortBtn = document.getElementById('sort').addEventListener('click', () => {
     sortBtn.innerText = null;
 
     if(sortBtn.classList.contains('fa-sort-alpha-asc')) {
