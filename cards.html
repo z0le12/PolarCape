@@ -43,7 +43,7 @@
 
                 <div class="search-tag">
                     <input class="search-field" type="text" placeholder="name, text">
-                    <button>Search</button>
+                    <button id="search-btn">Search</button>
                 </div>
             </nav>
         </div>
@@ -54,12 +54,14 @@
 
         <div id="cards">
             <table id='table'>
-                <tr>
-                    <th>Name</th>
-                    <th>Text</th>
-                    <th>Types</th>
-                    <th>Colors</th>
-                </tr>
+                <tbody id='table-body'>
+                    <tr>
+                        <th id="sort">Name</th>
+                        <th>Text</th>
+                        <th>Types</th>
+                        <th>Colors</th>
+                    </tr>
+                </tbody>
             </table>
         </div>
 
