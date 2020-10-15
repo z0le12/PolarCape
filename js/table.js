@@ -114,6 +114,15 @@ const sortTable = () => {
     };
 };
 
-const nameRow = document.getElementById('sort').addEventListener('click',() => {
+const sortBtn = document.getElementById('sort');
+sortBtn.addEventListener('click', () => {
+    sortBtn.innerText = null;
+
+    if(sortBtn.classList.contains('fa-sort-alpha-asc')) {
+        sortBtn.classList.toggle('fa-sort-alpha-desc');
+    } else {
+        sortBtn.classList.toggle('fa-sort-alpha-asc');
+    }
+
     sortTable();
 });
