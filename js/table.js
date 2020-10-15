@@ -4,6 +4,7 @@ import { showHideFilterVisibility } from './toggle-information.js';
 
 const cards = document.getElementById('cards');
 const table = document.getElementById('table');
+const sortBtn = document.getElementById('sort');
 
 const cardsRepo = new CardsRepo;
 
@@ -74,6 +75,9 @@ const closeTableBTN = () => {
         table.style.display = 'none';
         tableBody.remove();
         closeTableDiv.remove();
+        let removeClass = sortBtn.getAttribute('class').split(' ')[1];
+        sortBtn.classList.remove(removeClass);
+        sortBtn.innerText = 'Sort';
         showHideFilterVisibility();
     });
 };
@@ -120,7 +124,6 @@ const sortTable = () => {
     };
 };
 
-const sortBtn = document.getElementById('sort');
 sortBtn.addEventListener('click', () => {
     sortBtn.innerText = null;
 
