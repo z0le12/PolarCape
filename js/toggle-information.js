@@ -32,7 +32,7 @@ export const showHideFilterVisibility = () => {
     const filterElements = Array.from(filterElementsHTMLCollection);
     
     filterElements.forEach((e, i) => {
-        if(e.style.visibility === '') {
+        if(e.style.visibility === '' || e.style.visibility === 'hidden') {
             e.style.visibility = 'visible';
             return;
         } else {
