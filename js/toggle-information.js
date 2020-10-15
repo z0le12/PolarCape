@@ -42,6 +42,6 @@ export const showHideFilterVisibility = () => {
             }
         });
     } else {
-        alert('Please first close the table at the bottom, and then load a new one');
+        return;
     };
 };

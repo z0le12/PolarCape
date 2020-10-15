@@ -12,10 +12,11 @@ export const searchFieldLogic = () => {
                 row.style.display = 'none';
             };
         };
-    };
 
-    if(searchInputValue === '') {
-        row.style.display = 'table-row';
+        if(searchInputValue === '') {
+            row.style.display = 'table-row';
+            break;
+        };
     };
 };
 

@@ -14,6 +14,10 @@ window.onload = () => {
 };
 
 document.querySelector('.show-all-cards').addEventListener('click', () => {
+    let tableBody = document.getElementById('table-body');
+    if(tableBody) {
+        alert(`Please first close the table at the bottom, then load a new one.`);
+    };
     loadingInformation();
     getAllCards();
     showHideFilterVisibility();
