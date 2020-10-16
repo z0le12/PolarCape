@@ -4,6 +4,8 @@ import { showHideFilterVisibility } from './toggle-information.js';
 
 const cards = document.getElementById('cards');
 const table = document.getElementById('table');
+const filterElementsHTMLCollection = document.getElementsByClassName('filter');
+const filterElements = Array.from(filterElementsHTMLCollection);
 const sortBtn = document.getElementById('sort');
 
 const cardsRepo = new CardsRepo;
@@ -63,6 +65,7 @@ export const getAllCards = async() => {
 
 const closeTableBTN = () => {
     let tableBody = document.getElementById('table-body');
+
     const closeTableDiv = document.createElement('div');
     closeTableDiv.classList.add('close-table-div');
     const closeTableBtn = document.createElement('button');
@@ -73,6 +76,7 @@ const closeTableBTN = () => {
     
     closeTableBtn.addEventListener('click', () => {
         table.style.display = 'none';
+        filterElements.map(e => e.style.visibility = 'hidden');
         tableBody.remove();
         closeTableDiv.remove();
         let removeClass = sortBtn.getAttribute('class').split(' ')[1];
