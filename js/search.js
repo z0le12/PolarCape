@@ -15,7 +15,6 @@ export const searchFieldLogic = () => {
 
         if(searchInputValue === '') {
             row.style.display = 'table-row';
-            break;
         };
     };
 };
