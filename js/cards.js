@@ -1,6 +1,6 @@
 import { getAllCards } from './table.js';
 import { getAllTypes } from './types.js';
-import { loadingInformation, showHideFilterVisibility } from './toggle-information.js';
+import { loadingInformation, showFilterVisibility } from './toggle-information.js';
 import { colours } from './colours.js';
 import { searchFieldLogic } from './search.js';
 
@@ -25,5 +25,5 @@ document.querySelector('.show-all-cards').addEventListener('click', () => {
 
     loadingInformation();
     getAllCards();
-    showHideFilterVisibility();
+    showFilterVisibility();
 });

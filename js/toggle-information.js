@@ -27,19 +27,9 @@ export const closeLoadingInformation = () => {
     loadingDiv.remove();
 };
 
-export const showHideFilterVisibility = () => {
-    let tableBody = document.getElementById('table-body');
+export const showFilterVisibility = () => {
     const filterElementsHTMLCollection = document.getElementsByClassName('filter');
-    const filterElements = Array.from(filterElementsHTMLCollection);
-    
-    if(!tableBody) {
-        filterElements.forEach((e, i) => {
-            if(e.style.visibility === '' || e.style.visibility === 'hidden') {
-                e.style.visibility = 'visible';
-                return;
-            } else {
-                e.style.visibility = 'hidden';
-            }
-        });
-    }
+    const filterElements = Array.from(filterElementsHTMLCollection);    
+
+    filterElements.map(e => e.style.visibility = 'visible');
 };
