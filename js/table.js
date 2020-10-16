@@ -11,6 +11,8 @@ const sortBtn = document.getElementById('sort');
 const cardsRepo = new CardsRepo;
 
 export const getAllCards = async() => {
+    const allCards = await cardsRepo.getCards();
+
     let tableBody = document.getElementById('table-body');
 
     if(!tableBody) {
@@ -21,8 +23,6 @@ export const getAllCards = async() => {
         closeLoadingInformation();
         return;
     }
-
-    const allCards = await cardsRepo.getCards();
 
     closeLoadingInformation();
     
@@ -82,7 +82,6 @@ const closeTableBTN = () => {
         let removeClass = sortBtn.getAttribute('class').split(' ')[1];
         sortBtn.classList.remove(removeClass);
         sortBtn.innerText = 'Sort';
-        showHideFilterVisibility();
     });
 };
 
