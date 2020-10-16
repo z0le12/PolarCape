@@ -14,6 +14,7 @@ export const getAllCards = async() => {
     if(!tableBody) {
         tableBody = document.createElement('tbody');
         tableBody.id = 'table-body';
+        table.appendChild(tableBody);
     } else {
         closeLoadingInformation();
         return;
@@ -53,7 +54,6 @@ export const getAllCards = async() => {
         tableRow.appendChild(tableDataColors);
 
         tableBody.appendChild(tableRow);
-        table.appendChild(tableBody);
     });
 
     closeTableBTN();
