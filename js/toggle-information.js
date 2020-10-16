@@ -1,3 +1,6 @@
+const filterElementsHTMLCollection = document.getElementsByClassName('filter');
+const filterElements = Array.from(filterElementsHTMLCollection);  
+
 export const toggleDropDownVisibility = (element) => {
     if(element.style.display === 'flex') {
         element.style.display = 'none'
@@ -28,8 +31,9 @@ export const closeLoadingInformation = () => {
 };
 
 export const showFilterVisibility = () => {
-    const filterElementsHTMLCollection = document.getElementsByClassName('filter');
-    const filterElements = Array.from(filterElementsHTMLCollection);    
-
     filterElements.map(e => e.style.visibility = 'visible');
+};
+
+export const hideFilterVisibility = () => {
+    filterElements.map(e => e.style.visibility = 'hidden');
 };

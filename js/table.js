@@ -1,10 +1,8 @@
 import { CardsRepo } from './repository.js';
-import { closeLoadingInformation } from './toggle-information.js';
+import { closeLoadingInformation, hideFilterVisibility } from './toggle-information.js';
 
 const cards = document.getElementById('cards');
 const table = document.getElementById('table');
-const filterElementsHTMLCollection = document.getElementsByClassName('filter');
-const filterElements = Array.from(filterElementsHTMLCollection);
 const sortBtn = document.getElementById('sort');
 
 const cardsRepo = new CardsRepo;
@@ -74,8 +72,8 @@ const closeTableBTN = () => {
     cards.appendChild(closeTableDiv);
     
     closeTableBtn.addEventListener('click', () => {
+        hideFilterVisibility()
         table.style.display = 'none';
-        filterElements.map(e => e.style.visibility = 'hidden');
         tableBody.remove();
         closeTableDiv.remove();
         let removeClass = sortBtn.getAttribute('class').split(' ')[1];
