@@ -128,9 +128,11 @@ sortBtn.addEventListener('click', () => {
     sortBtn.innerText = null;
 
     if(sortBtn.classList.contains('fa-sort-alpha-asc')) {
+        sortBtn.classList.toggle('fa-sort-alpha-asc');
         sortBtn.classList.toggle('fa-sort-alpha-desc');
     } else {
-        sortBtn.classList.toggle('fa-sort-alpha-asc');
+        sortBtn.classList.add('fa-sort-alpha-asc');
+        sortBtn.classList.remove('fa-sort-alpha-desc');
     }
 
     sortTable();
